@@ -1,6 +1,6 @@
 
 
-const drawFromSocket = (
+export const drawFromSocket = (
     socketMoves:[number, number][],
     socketOptions: CtxOption,
     ctx: CanvasRenderingContext2D,
