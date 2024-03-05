@@ -89,8 +89,31 @@ export default function Home() {
 
   
   return (
-   <div>
-    <h1 className="bg-red-500">Temp</h1>
+   <div className="flex h-full w-full items-center justify-center">
+    <button onClick={() => setOptions({lineColor:"blue", lineWidth: 5})}
+    className="absolute bg-black"
+    >
+      Blue
+    </button>
+    <canvas
+      className="h-full w-full"
+      ref={canvasRef}
+      onMouseDown={(e) => handleStartDrawing(e.clientX, e.clientY)}
+      onMouseUp={handleEndDrawing}
+      onMouseMove={(e) => handleDraw(e.clientX, e.clientY)}
+      onTouchStart={(e) => {
+        handleStartDrawing(
+        e.changedTouches[0].clientX,
+        e.changedTouches[0].clientY
+        )
+      }}
+      onTouchEnd={handleEndDrawing}
+      onTouchMove={(e) => {
+        handleDraw(e.changedTouches[0].clientX, e.changedTouches[0].clientY)
+      }}
+      width={size.width}
+      height={size.height}
+    />
    </div>
   );
 }
