@@ -1,12 +1,9 @@
-import Image from "next/image";
+import Canvas from "@/modules/canvas/components/Canvas";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return (
-   <div>
-    <h1 className="bg-red-500">Temp</h1>
-   </div>
-  );
+
+  return <Canvas/>;
 }
